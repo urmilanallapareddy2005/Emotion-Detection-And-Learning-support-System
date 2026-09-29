@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection and Learning Support Engine</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>😊 Emotion Detection and Learning Support Engine</h1>
+
+    <p>Enter your feelings below and get learning support.</p>
+
+    <form method="POST">
+        <textarea
+            name="text"
+            rows="5"
+            placeholder="Example: I am worried about my exam..."
+            required></textarea>
+
+        <br><br>
+
+        <input type="submit" value="Detect Emotion">
+    </form>
+
+    {% if emotion %}
+    <div class="result">
+        <h2>Detected Emotion: {{ emotion }}</h2>
+        <h3>Learning Support</h3>
+        <p>{{ tip }}</p>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
